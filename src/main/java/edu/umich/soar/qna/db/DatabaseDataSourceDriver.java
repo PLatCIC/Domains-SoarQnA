@@ -27,7 +27,7 @@ public class DatabaseDataSourceDriver implements DataSourceDriver {
 		
 		if (goodParameters) {
 			try {
-				Class.forName((String) parameters.get("driver")).newInstance();
+				Class.forName((String) parameters.get("driver")).getDeclaredConstructor().newInstance();
 				Connection conn = DriverManager.getConnection((String) parameters.get("url"), (String) parameters.get("username"), (String) parameters.get("password"));
 				returnVal = new DatabaseConnection(conn);
 			} catch (Exception e) {

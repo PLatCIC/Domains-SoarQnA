@@ -34,7 +34,7 @@ public class HTTPDataSourceDriver implements DataSourceDriver {
 		
 		if (goodParameters) {
 			try {
-				HTTPScraper scraper = (HTTPScraper) Class.forName((String) parameters.get("scraper")).newInstance();
+				HTTPScraper scraper = (HTTPScraper) Class.forName((String) parameters.get("scraper")).getDeclaredConstructor().newInstance();
 				returnVal = new HTTPConnection(scraper, method);
 				
 			} catch (Exception e) {

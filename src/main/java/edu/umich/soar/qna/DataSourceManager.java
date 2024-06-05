@@ -2,6 +2,7 @@ package edu.umich.soar.qna;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +38,28 @@ public class DataSourceManager {
 		}
 		
 		Class<?> driverClass = Class.forName(driverName);
-		DataSourceDriver driver = (DataSourceDriver) driverClass.newInstance();
+		DataSourceDriver driver = null;
+		try {
+			driver = (DataSourceDriver) driverClass.getDeclaredConstructor().newInstance();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		DataSourceConnection conn = driver.connect(connectionParameters);
 		
 		if (conn != null) {

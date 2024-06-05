@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import edu.umich.dice.LiarsDice.Predicate;
 import edu.umich.soar.qna.ComputationalQueryState;
+import edu.umich.soar.qna.dice.LiarsDice.Predicate;
 
 public class ComputeProbabilityQueryState extends ComputationalQueryState {
 	
