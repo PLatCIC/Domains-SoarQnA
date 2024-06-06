@@ -16,13 +16,13 @@ public class SleepQueryState extends UnaryMathQueryState {
 			Long sleepTime = null;
 			
 			if ((operand1 instanceof Long)) {
-				newList.add(new Long((((Long) operand1).longValue())));
+				newList.add(Long.valueOf((((Long) operand1).longValue())));
 				
-				sleepTime = (new Long((((Long) operand1).longValue()))).longValue();
+				sleepTime = (Long.valueOf((((Long) operand1).longValue()))).longValue();
 			} else {
-				newList.add(new Double((((Number) operand1).doubleValue())));
+				newList.add(Double.valueOf((((Number) operand1).doubleValue())));
 				
-				sleepTime = (new Double((((Number) operand1).doubleValue()))).longValue();
+				sleepTime = (Double.valueOf((((Number) operand1).doubleValue()))).longValue();
 			}
 			returnVal.put("result", newList);
 			

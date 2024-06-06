@@ -3,7 +3,6 @@ package edu.umich.soar.qna.http;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URI;
-import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
@@ -48,7 +47,7 @@ public class HTTPConnection implements DataSourceConnection {
 			}
 			
 			URI uri = new URI(scheme, null, host, port, path, uriQuery, null);
-			HttpURLConnection conn = (HttpURLConnection) new URL(uri.toString()).openConnection();
+			HttpURLConnection conn = (HttpURLConnection) uri.toURL().openConnection();
 			conn.setRequestMethod(method);
 			if (method.compareTo("POST")==0) {
 				conn.setDoOutput(true);

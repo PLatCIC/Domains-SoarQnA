@@ -13,7 +13,7 @@ public class SqrtQueryState extends UnaryMathQueryState {
 			HashMap<String, List<Object>> returnVal = new HashMap<String, List<Object>>();
 			List<Object> newList = new LinkedList<Object>();
 			
-			newList.add(new Double(Math.sqrt(((Number) operand1).doubleValue())));
+			newList.add(Double.valueOf(Math.sqrt(((Number) operand1).doubleValue())));
 			returnVal.put("result", newList);
 			
 			return returnVal;

@@ -160,12 +160,12 @@ public abstract class SMLModule {
 					if (!childWme.IsIdentifier()) {
 						Object childAttr = null;
 						try {
-							childAttr = new Long(Long.parseLong(childWme.GetAttribute()));
+							childAttr = Long.valueOf(Long.parseLong(childWme.GetAttribute()));
 						} catch (Exception e) {
 						}
 						if (childAttr == null) {
 							try {
-								childAttr = new Double(Double.parseDouble(childWme.GetAttribute()));
+								childAttr = Double.valueOf(Double.parseDouble(childWme.GetAttribute()));
 							} catch (Exception e) {
 							}
 						}
@@ -178,9 +178,9 @@ public abstract class SMLModule {
 						}
 						
 						if (childWme.ConvertToIntElement()!=null) {
-							queryParams.get(childAttr).add(new Long(childWme.ConvertToIntElement().GetValue()));
+							queryParams.get(childAttr).add(Long.valueOf(childWme.ConvertToIntElement().GetValue()));
 						} else if (childWme.ConvertToFloatElement()!=null) {
-							queryParams.get(childAttr).add(new Double(childWme.ConvertToFloatElement().GetValue()));
+							queryParams.get(childAttr).add(Double.valueOf(childWme.ConvertToFloatElement().GetValue()));
 						} else {
 							queryParams.get(childAttr).add(new String(childWme.ConvertToStringElement().GetValue()));
 						}

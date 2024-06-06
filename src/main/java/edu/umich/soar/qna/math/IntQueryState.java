@@ -25,10 +25,10 @@ public class IntQueryState extends ComputationalQueryState {
 				Object tempObject = tempList.iterator().next();
 				
 				if (tempObject instanceof Number) {
-					convertedValue = new Long(((Number) tempObject).longValue());
+					convertedValue = Long.valueOf(((Number) tempObject).longValue());
 				} else if (tempObject instanceof String) {
 					try {
-						convertedValue = new Long(Long.parseLong(((String) tempObject)));
+						convertedValue = Long.valueOf(Long.parseLong(((String) tempObject)));
 					} catch (NumberFormatException e) {
 					}
 				}

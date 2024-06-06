@@ -25,10 +25,10 @@ public class FloatQueryState extends ComputationalQueryState {
 				Object tempObject = tempList.iterator().next();
 				
 				if (tempObject instanceof Number) {
-					convertedValue = new Double(((Number) tempObject).doubleValue());
+					convertedValue = Double.valueOf(((Number) tempObject).doubleValue());
 				} else if (tempObject instanceof String) {
 					try {
-						convertedValue = new Double(Double.parseDouble(((String) tempObject)));
+						convertedValue = Double.valueOf(Double.parseDouble(((String) tempObject)));
 					} catch (NumberFormatException e) {
 					}
 				}

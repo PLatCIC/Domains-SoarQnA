@@ -14,9 +14,9 @@ public class AbsQueryState extends UnaryMathQueryState {
 			List<Object> newList = new LinkedList<Object>();
 			
 			if ((operand1 instanceof Long)) {
-				newList.add(new Long(Math.abs(((Long) operand1).longValue())));
+				newList.add(Long.valueOf(Math.abs(((Long) operand1).longValue())));
 			} else {
-				newList.add(new Double(Math.abs(((Number) operand1).doubleValue())));
+				newList.add(Double.valueOf(Math.abs(((Number) operand1).doubleValue())));
 			}
 			returnVal.put("result", newList);
 			

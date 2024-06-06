@@ -14,9 +14,9 @@ public class SubtractionQueryState extends BinaryMathQueryState {
 			List<Object> newList = new LinkedList<Object>();
 			
 			if ((operand1 instanceof Long) && (operand2 instanceof Long)) {
-				newList.add(new Long(((Long) operand1).longValue()-((Long) operand2).longValue()));
+				newList.add(Long.valueOf(((Long) operand1).longValue()-((Long) operand2).longValue()));
 			} else {
-				newList.add(new Double(((Number) operand1).doubleValue()-((Number) operand2).doubleValue()));
+				newList.add(Double.valueOf(((Number) operand1).doubleValue()-((Number) operand2).doubleValue()));
 			}
 			returnVal.put("result", newList);
 			

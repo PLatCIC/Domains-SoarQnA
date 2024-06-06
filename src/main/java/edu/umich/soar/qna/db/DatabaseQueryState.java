@@ -140,7 +140,7 @@ public class DatabaseQueryState implements QueryState {
 				}
 			} else {
 				returnVal.put(UPDATES_NAME, new LinkedList<Object>());
-				returnVal.get(UPDATES_NAME).add(new Long(numUpdates));
+				returnVal.get(UPDATES_NAME).add(Long.valueOf(numUpdates));
 				dataAvailable = false;
 			}
 		}

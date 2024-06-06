@@ -27,7 +27,7 @@ public class ModQueryState extends BinaryMathQueryState {
 			HashMap<String, List<Object>> returnVal = new HashMap<String, List<Object>>();
 			List<Object> newList = new LinkedList<Object>();
 			
-			newList.add(new Long(((Long) operand1).longValue() % ((Long) operand2).longValue()));
+			newList.add(Long.valueOf(((Long) operand1).longValue() % ((Long) operand2).longValue()));
 			returnVal.put("result", newList);
 			
 			return returnVal;
